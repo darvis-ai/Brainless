@@ -66,15 +66,15 @@ def regression_test():
 
 def get_titanic_binary_classification_dataset(basic=True):
     try:
-        df_titanic = pd.read_csv(os.path.join('test_data', 'titanic.csv'))
+        df_titanic = pd.read_csv(os.path.join('data', 'titanic.csv'))
     except FileNotFoundError:
         print('titanic.csv could not be found, attempting to retrieve from url.')
         dataset_url = 'http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.csv'
         df_titanic = pd.read_csv(dataset_url)
         # Do not write the index that pandas automatically creates
-        if not os.path.exists('test_data'):
-            os.mkdir('test_data')
-        df_titanic.to_csv(os.path.join('test_data', 'titanic.csv'), index=False)
+        if not os.path.exists('data'):
+            os.mkdir('data')
+        df_titanic.to_csv(os.path.join('data', 'titanic.csv'), index=False)
 
     df_titanic = df_titanic.drop(['boat', 'body'], axis=1)
 

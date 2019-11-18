@@ -11,7 +11,6 @@ import pandas as pd
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 
-from cash_ml import Predictor
 from cash_ml.algorithm.regressor import Regressor
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
@@ -47,8 +46,6 @@ def regression_test():
 
     ml_predictor = Regressor(type_of_estimator='regressor', column_descriptions=column_descriptions)
 
-    #ml_predictor = Regressor(ml_predictor)
-
     ml_predictor.train(df_boston_train, model_names=[model_name], perform_feature_scaling=False)
 
     test_score = ml_predictor.score(df_boston_test, df_boston_test.MEDV)
@@ -66,6 +63,7 @@ def regression_test():
 
     assert lower_bound < test_score < -2.7
 
-if __name__ == '__main__':
 
+
+if __name__ == '__main__':
     regression_test()

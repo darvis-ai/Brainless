@@ -82,9 +82,9 @@ def calculate_brier_score_loss(actuals, probas):
 
 
 def get_twitter_sentiment_multilabel_classification_dataset():
-    if not os.path.exists('test_data'):
-        os.mkdir('test_data')
-    file_name = os.path.join('test_data', 'twitter_sentiment.h5')
+    if not os.path.exists('data'):
+        os.mkdir('data')
+    file_name = os.path.join('data', 'twitter_sentiment.h5')
 
     try:
         df_twitter = pd.read_csv(file_name)
