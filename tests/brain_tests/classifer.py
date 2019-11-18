@@ -11,7 +11,8 @@ import pandas as pd
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 
-from brainless import Predictor
+# old_version : from brainless import Predictor
+from brainless.algorithm.classifier import Classifier
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.path
@@ -21,47 +22,6 @@ os.environ['is_test_suite'] = 'True'
 # os.environ['KERAS_BACKEND'] = 'theano'
 
 
-def get_boston_regression_dataset():
-    boston = load_boston()
-    df_boston = pd.DataFrame(boston.data)
-    df_boston.columns = boston.feature_names
-    df_boston['MEDV'] = boston['target']
-    df_boston_train, df_boston_test = train_test_split(df_boston, test_size=0.33, random_state=42)
-    return df_boston_train, df_boston_test
-
-
-def regression_test():
-    # a random seed of 42 has ExtraTreesRegressor getting the best CV score,
-    # and that model doesn't generalize as well as GradientBoostingRegressor.
-    np.random.seed(0)
-    model_name = 'LGBMRegressor'
-
-    df_boston_train, df_boston_test = get_boston_regression_dataset()
-    many_dfs = []
-    for i in range(100):
-        many_dfs.append(df_boston_train)
-    df_boston_train = pd.concat(many_dfs)
-
-    column_descriptions = {'MEDV': 'output', 'CHAS': 'categorical'}
-
-    ml_predictor = Predictor(type_of_estimator='regressor', column_descriptions=column_descriptions)
-
-    ml_predictor.train(df_boston_train, model_names=[model_name], perform_feature_scaling=False)
-
-    test_score = ml_predictor.score(df_boston_test, df_boston_test.MEDV)
-
-    print('test_score')
-    print(test_score)
-
-    lower_bound = -3.2
-    if model_name == 'DeepLearningRegressor':
-        lower_bound = -7.8
-    if model_name == 'LGBMRegressor':
-        lower_bound = -4.95
-    if model_name == 'XGBRegressor':
-        lower_bound = -3.4
-
-    assert lower_bound < test_score < -2.7
 
 
 def get_titanic_binary_classification_dataset(basic=True):
@@ -69,17 +29,17 @@ def get_titanic_binary_classification_dataset(basic=True):
         df_titanic = pd.read_csv(os.path.join('data', 'titanic.csv'))
     except FileNotFoundError:
         print('titanic.csv could not be found, attempting to retrieve from url.')
-        dataset_url = 'http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.csv'
+        dataset_url = 'https://gist.githubusercontent.com/michhar/2dfd2de0d4f8727f873422c5d959fff5/raw/ff414a1bcfcba32481e4d4e8db578e55872a2ca1/titanic.csv'
         df_titanic = pd.read_csv(dataset_url)
         # Do not write the index that pandas automatically creates
         if not os.path.exists('data'):
             os.mkdir('data')
         df_titanic.to_csv(os.path.join('data', 'titanic.csv'), index=False)
 
-    df_titanic = df_titanic.drop(['boat', 'body'], axis=1)
+    df_titanic = df_titanic.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
     if basic:
-        df_titanic = df_titanic.drop(['name', 'ticket', 'cabin', 'home.dest'], axis=1)
+        df_titanic = df_titanic.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
     df_titanic_train, df_titanic_test = train_test_split(
         df_titanic, test_size=0.33, random_state=42)
@@ -98,12 +58,10 @@ def classification_test():
         'survived': 'output',
         'embarked': 'categorical',
         'pclass': 'categorical',
-        'sex': 'categorical',
-        'this_does_not_exist': 'ignore',
-        'DELETE_THIS_FIELD': 'ignore'
+        'sex': 'categorical'
     }
 
-    ml_predictor = Predictor(
+    ml_predictor = Classifier(
         type_of_estimator='classifier', column_descriptions=column_descriptions)
 
     ml_predictor.train(df_titanic_train, model_names=model_name)

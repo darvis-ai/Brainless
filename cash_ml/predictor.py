@@ -1,5 +1,5 @@
-from cash_ml.classifier import Classifier
-from cash_ml.regressor import Regressor
+from brainless.algorithm.classifier import Classifier
+from brainless.algorithm.regressor import Regressor
 
 
 class Predictor(object):

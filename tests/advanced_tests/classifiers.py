@@ -7,8 +7,8 @@ import numpy as np
 from sklearn.metrics import accuracy_score
 
 import tests.utils_testing as utils
-from cash_ml import Predictor
-from cash_ml.utils_models import load_ml_model
+from brainless import Predictor
+from brainless.utils_models import load_ml_model
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 
@@ -183,7 +183,7 @@ def optimize_final_model_classification(model_name=None):
 
 
 def getting_single_predictions_multilabel_classification(model_name=None):
-    # cash_ml does not support multilabel classification for deep learning at the moment
+    # brainless does not support multilabel classification for deep learning at the moment
     if model_name == 'DeepLearningClassifier' or model_name == 'CatBoostClassifier':
         return
 
@@ -396,7 +396,7 @@ def getting_single_predictions_multilabel_classification(model_name=None):
 #
 #     file_name = ml_predictor.save(str(random.random()))
 #
-#     from cash_ml.utils_models import load_ml_model
+#     from brainless.utils_models import load_ml_model
 #
 #     saved_ml_pipeline = load_ml_model(file_name)
 #

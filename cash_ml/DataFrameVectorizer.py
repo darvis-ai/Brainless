@@ -7,7 +7,7 @@ import pandas as pd
 import scipy.sparse as sp
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from cash_ml.utils import CustomLabelEncoder
+from brainless.utils import CustomLabelEncoder
 
 bad_values = {
     float('nan'),

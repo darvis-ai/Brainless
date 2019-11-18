@@ -13,8 +13,8 @@ from sklearn import __version__ as sklearn_version
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import train_test_split
 
-from cash_ml import utils_models
-from cash_ml.utils_models import get_name_from_model
+from brainless import utils_models
+from brainless.utils_models import get_name_from_model
 
 try:
     from keras import Sequential

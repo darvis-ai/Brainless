@@ -4,7 +4,7 @@ import sys
 import numpy as np
 
 import tests.utils_testing as utils
-from cash_ml import Predictor
+from brainless import Predictor
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 

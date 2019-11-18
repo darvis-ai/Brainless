@@ -7,7 +7,7 @@ from sklearn.datasets import load_boston
 from sklearn.metrics import brier_score_loss, mean_squared_error
 from sklearn.model_selection import train_test_split
 
-from cash_ml import Predictor
+from brainless import Predictor
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 os.environ['is_test_suite'] = 'True'
@@ -82,9 +82,9 @@ def calculate_brier_score_loss(actuals, probas):
 
 
 def get_twitter_sentiment_multilabel_classification_dataset():
-    if not os.path.exists('test_data'):
-        os.mkdir('test_data')
-    file_name = os.path.join('test_data', 'twitter_sentiment.h5')
+    if not os.path.exists('data'):
+        os.mkdir('data')
+    file_name = os.path.join('data', 'twitter_sentiment.h5')
 
     try:
         df_twitter = pd.read_csv(file_name)
