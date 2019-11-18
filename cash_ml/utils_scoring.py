@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error, brier_score_loss, accuracy_score
     roc_auc_score, f1_score
 from tabulate import tabulate
 
-from cash_ml import utils
+from brainless import utils
 
 bad_string_values = {
     str(float('nan')), str(float('inf')), str(float('-inf')), 'None', 'none',

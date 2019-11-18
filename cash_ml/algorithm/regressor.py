@@ -1,4 +1,4 @@
-from cash_ml.predictor_base import PredictorBase
+from brainless.predictor_base import PredictorBase
 
 
 class Regressor(PredictorBase):

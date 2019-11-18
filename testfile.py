@@ -1,6 +1,6 @@
-from cash_ml import Predictor
-from cash_ml.utils import get_boston_dataset
-from cash_ml.utils_models import load_ml_model
+from brainless import Predictor
+from brainless.utils import get_boston_dataset
+from brainless.utils_models import load_ml_model
 
 # Load data
 df_train, df_test = get_boston_dataset()

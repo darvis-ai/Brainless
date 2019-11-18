@@ -167,4 +167,4 @@ CI is also set up, so if you're developing on this, you can just open a PR, and 
 The tests are relatively comprehensive, though as with everything with brainless, I happily welcome your contributions here!
 
 ## Credit where credit is due
-This entire project is based *quite heavily* on the [work previously done by Preston Parry.](https://github.com/ClimbsRocks/auto_ml) and  [work previously done by Jesse Toftum](https://github.com/jesse-toftum/cash_ml)
+This entire project is based *quite heavily* on the [work previously done by Preston Parry.](https://github.com/ClimbsRocks/auto_ml) and  [work previously done by Jesse Toftum](https://github.com/jesse-toftum/brainless)

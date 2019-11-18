@@ -11,7 +11,7 @@ from sklearn.linear_model import RANSACRegressor, LinearRegression, Ridge, Lasso
     PassiveAggressiveClassifier
 from sklearn.svm import LinearSVC, LinearSVR
 
-from cash_ml import utils_categorical_ensembling
+from brainless import utils_categorical_ensembling
 
 
 try:
