@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 
-from brainless.algorithm.regressor import Regressor
+from brainless.algorithm.regressor import  Regressor
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.path

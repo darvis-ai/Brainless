@@ -1,7 +1,12 @@
+
+
+
+
+
 from codecs import open
 from os import path
 
-from setuptools import setup
+from setuptools import setup ,Extension
 
 here = path.abspath(path.dirname(__file__))
 try:
@@ -12,8 +17,6 @@ try:
         readme_text = read_file.readlines()
     # Change our README for pypi so we can get analytics tracking information for that separately
     readme_text = [row.decode() for row in readme_text]
-    readme_text[-1] = "[![Analytics](https://ga-beacon.appspot.com/UA-58170643-5/brainless/pypi)]" \
-                      "(https://github.com/igrigorik/ga-beacon)"
 
     long_description = pypandoc.convert(''.join(readme_text), 'rst', format='md')
 except ImportError:
@@ -28,14 +31,15 @@ except ImportError:
     with open(path.join(here, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
 
+
 setup(
     name='brainless',
     version=open("brainless/_version.py").readlines()[-1].split()[-1].strip("\"'"),
-    description='Automated machine learning for production and analytics',
+    description='Automated Machine Learning for production and analytics',
     long_description=long_description,
-    url='https://github.com/ClimbsRocks/brainless',
-    author='Preston Parry',
-    author_email='ClimbsBytes@gmail.com',
+    url='https://github.com/darvis-ai/Brainless',
+    author='Darvis.ai Team',
+    author_email='loaiabdalslam@gmail.com',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -49,12 +53,13 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7'
     ],
     keywords=[
         'machine learning', 'data science', 'automated machine learning', 'regressor', 'regressors',
         'regression', 'classification', 'classifiers', 'classifier', 'estimators', 'predictors',
         'XGBoost', 'Random Forest', 'sklearn', 'scikit-learn', 'analytics', 'analysts',
-        'coefficients', 'feature importances'
+        'coefficients', 'feature importances','darvis-ai','darvis-research',
         'analytics', 'artificial intelligence', 'subpredictors', 'ensembling', 'stacking',
         'blending', 'feature engineering', 'feature extraction', 'feature selection', 'production',
         'pandas', 'dataframes', 'machinejs', 'deep learning', 'tensorflow', 'deeplearning',
