@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 
 from tests import utils_testing as utils
 from brainless import Predictor
-from brainless.utils_models import load_ml_model
+from brainless.utils.models.utils_models import load_ml_model
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.path
