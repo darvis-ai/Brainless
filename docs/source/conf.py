@@ -29,7 +29,7 @@ import sys
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['recommonmark']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -49,8 +49,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'brainless'
-copyright = u'2016, Preston Parry'
-author = u'Preston Parry'
+copyright = u'2019, Loaii Abdalslam'
+author = u'Loaii Abdalslam'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -270,7 +270,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'brainless.tex', u'cash\\_ml Documentation',
+    (master_doc, 'brainless.tex', u'brainless\\ Documentation',
      u'Preston Parry', 'manual'),
 ]
 
@@ -328,7 +328,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'brainless', u'brainless Documentation',
-     author, 'brainless', 'One line description of project.',
+     author, 'loaii abdalslam', 'One line description of project.',
      'Miscellaneous'),
 ]
 

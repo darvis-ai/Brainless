@@ -11,12 +11,13 @@ import pandas as pd
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 
-from brainless.algorithm.regressor import  Regressor
+from brainless.algorithm.regressor import Regressor
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.path
 
 os.environ['is_test_suite'] = 'True'
+
 
 # os.environ['KERAS_BACKEND'] = 'theano'
 
@@ -62,7 +63,6 @@ def regression_test():
         lower_bound = -3.4
 
     assert lower_bound < test_score < -2.7
-
 
 
 if __name__ == '__main__':

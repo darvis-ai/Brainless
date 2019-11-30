@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 import tests.utils_testing as utils
 from brainless import Predictor
-from brainless.utils_models import load_ml_model
+from brainless.utils.models.utils_models import load_ml_model
 
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 os.environ['is_test_suite'] = 'True'
@@ -136,7 +136,7 @@ def test_feature_learning_categorical_ensembling_getting_single_predictions_clas
 
     file_name = ml_predictor.save(str(random.random()))
 
-    from brainless.utils_models import load_ml_model
+    from brainless.utils.models.utils_models import load_ml_model
 
     saved_ml_pipeline = load_ml_model(file_name)
 
@@ -317,7 +317,7 @@ def test_feature_learning_categorical_ensembling_getting_single_predictions_regr
 
     file_name = ml_predictor.save(str(random.random()))
 
-    from brainless.utils_models import load_ml_model
+    from brainless.utils.models.utils_models import load_ml_model
 
     saved_ml_pipeline = load_ml_model(file_name)
 

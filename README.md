@@ -19,7 +19,7 @@ Coming soon™
 
 ```python
 from brainless import Predictor
-from brainless.utils import get_boston_dataset
+from brainless.utils.utils import get_boston_dataset
 
 df_train, df_test = get_boston_dataset()
 
@@ -41,8 +41,8 @@ brainless is designed for production. Here's an example that includes serializin
 
 ```python
 from brainless import Predictor
-from brainless.utils import get_boston_dataset
-from brainless.utils_models import load_ml_model
+from brainless.utils.utils import get_boston_dataset
+from brainless.utils.models.utils_models import load_ml_model
 
 # Load data
 df_train, df_test = get_boston_dataset()

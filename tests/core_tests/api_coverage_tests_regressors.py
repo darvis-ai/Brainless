@@ -1,9 +1,7 @@
 # This file is just to test passing a bunch of different parameters into train to make sure that things work
 # At first, it is not necessarily testing whether those things have the intended effect or not
 
-import datetime
 import os
-import random
 import sys
 sys.path = [os.path.abspath(os.path.dirname(__file__))] + sys.path
 sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.path
@@ -11,12 +9,8 @@ sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.p
 os.environ['is_test_suite'] = 'True'
 
 from brainless import Predictor
-from brainless.utils_models import load_ml_model
 
-import dill
-from nose.tools import assert_equal, assert_not_equal, with_setup
 import numpy as np
-from sklearn.model_selection import train_test_split
 
 import tests.utils_testing as utils
 

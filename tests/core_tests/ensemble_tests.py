@@ -8,12 +8,8 @@ sys.path = [os.path.abspath(os.path.dirname(os.path.dirname(__file__)))] + sys.p
 os.environ['is_test_suite'] = 'True'
 
 from brainless import Predictor
-from brainless.utils_models import load_ml_model
+from brainless.utils.models.utils_models import load_ml_model
 
-from nose.tools import assert_equal, assert_not_equal, with_setup
-from sklearn.metrics import accuracy_score
-
-import dill
 import numpy as np
 import tests.utils_testing as utils
 

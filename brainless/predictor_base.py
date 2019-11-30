@@ -25,15 +25,15 @@ from sklearn.preprocessing import FunctionTransformer
 from tabulate import tabulate
 
 from brainless import DataFrameVectorizer
-from brainless import utils
-from brainless import utils_categorical_ensembling
-from brainless import utils_data_cleaning
-from brainless import utils_ensembling
-from brainless import utils_feature_selection
-from brainless import utils_model_training
-from brainless import utils_models
-from brainless import utils_scaling
-from brainless import utils_scoring
+from brainless.utils import utils
+from brainless.utils.categorical import utils_categorical_ensembling
+from brainless.utils.cleaning import utils_data_cleaning
+from brainless.utils.ensembling import utils_ensembling
+from brainless.utils.feature_selection import utils_feature_selection
+from brainless.utils.model_traning import utils_model_training
+from brainless.utils.models import utils_models
+from brainless.utils.scaling import utils_scaling
+from brainless.utils.scoring import utils_scoring
 from brainless._version import __version__ as brainless_version
 
 # TODO: Warn user of issues arising with deap not having correct dependencies.
